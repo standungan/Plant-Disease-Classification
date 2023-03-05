@@ -18,7 +18,7 @@ __TO DO__ :
 - Implement early stopping
 - Monitoring using Tensorboard
 - Custom Dataset for different dataset format
-
+```bash
 |-- dataset/
 |   |-- class1/
 |   |-- class2/
@@ -28,6 +28,6 @@ __TO DO__ :
 |-- dataset/
 |   |-- images/
 |   |-- labels.txt / labels.csv
-        
+```        
 
         
