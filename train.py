@@ -78,7 +78,7 @@ if __name__ == "__main__":
         print(f'Loss: {loss.item():.4f}')
 
         if (epoch+1) == 5:
-            # torch.save(model.state_dict(), f'experiment/checkpoint_exp01_{epoch+1}.pth') # Save the model after every epoch
+            torch.save(model.state_dict(), f'experiment/checkpoint_exp01_{epoch+1}.pth') # Save the model after every epoch
             model.eval() # set model to evaluation mode
             # Define metrics
             test_loss = 0.0
@@ -99,7 +99,7 @@ if __name__ == "__main__":
             # Compute final metrics
             test_loss /= len(validDataloader.dataset)
             test_acc = test_acc.double() / len(validDataloader.dataset)
-            print("Test Loss: {:.4f}, Test Accuracy: {:.4f} %".format(test_loss, test_acc*100))
+            print("Validation Loss: {:.4f}, Validation Accuracy: {:.4f} %".format(test_loss, test_acc*100))
 
         print("-"*100)
 
