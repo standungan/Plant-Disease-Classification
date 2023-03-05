@@ -20,7 +20,8 @@ image_classification/
 ```
 In this structure, there are three main directories:
 
-__dataset/__: This directory is images dataset, current format used is
+__dataset/__: This directory is images dataset, current format used is :
+
     ```bash
     |-- dataset/
     |   |-- train/
@@ -35,7 +36,7 @@ __dataset/__: This directory is images dataset, current format used is
     |       |-- class3/
     |       |-- ...
     ```
-    
+
 __models/__: This directory contains the model files. Each model is defined in a separate Python file. ( __COMING SOON ...__ )
 
 __experiments/__: Each experiment has a configuration file (__config.yaml__), a training script (__train.py__), and a testing script (__test.py__). The configuration file specifies the hyperparameters and other settings for the experiment.
