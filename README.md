@@ -18,14 +18,16 @@ __TO DO__ :
 - Implement early stopping
 - Monitoring using Tensorboard
 - Custom Dataset for different dataset format
-    - version 1
-        |-- dataset/
-            |   |-- class1/
-            |   |-- class2/
-            |   |-- class3/
-            |   |-- class4/
-    - version 2
-        |-- dataset/
-            |   |-- images/
-            |   |-- labels.txt / labels.csv
+- version 1
+|-- dataset/
+|   |-- class1/
+|   |-- class2/
+|   |-- class3/
+|   |-- class4/
+- version 2
+|-- dataset/
+|   |-- images/
+|   |-- labels.txt / labels.csv
+        
+
         
