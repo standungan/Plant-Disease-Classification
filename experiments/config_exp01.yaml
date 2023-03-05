@@ -1,0 +1,27 @@
+DATASET:
+  DATASET_DIR: "D:\\Dataset\\Plant Disease Dataset\\"
+  BATCH_SIZE: 16
+  NUM_WORKERS: 4
+  INPUT_SIZE: [256, 256]
+  MEAN: [0.485, 0.456, 0.406]
+  STD: [0.229, 0.224, 0.225]
+  NUM_CLASSES: 3
+
+MODEL:
+  BACKBONE: "resnet18"
+  PRETRAINED: False
+  INPUT_SIZE: [256, 256]
+
+TRAIN:
+  EPOCHS: 5
+  LEARNING_RATE: 0.001
+  OPTIMIZER: "adam"
+  LOSS_FUNCTION: "cross_entropy"
+  LR_SCHEDULER: "step"
+  STEP_SIZE: 10
+  GAMMA: 0.1
+
+TEST:
+  BATCH_SIZE: 16
+
+DEVICE : "cuda"
