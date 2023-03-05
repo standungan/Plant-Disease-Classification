@@ -37,13 +37,17 @@ __dataset/__: This directory is images dataset, current format used is :
     |       |-- ...
     ```
 
-__models/__: This directory contains the model files. Each model is defined in a separate Python file. ( __COMING SOON ...__ )
+__experiments/__ : Each experiment has a configuration file (__config.yaml__), 
 
-__experiments/__: Each experiment has a configuration file (__config.yaml__), a training script (__train.py__), and a testing script (__test.py__). The configuration file specifies the hyperparameters and other settings for the experiment.
+__models/__ : This directory contains the model files. Each model is defined in a separate Python file. ( __COMING SOON ...__ )
 
-The __utils/__ directory contains utility scripts and functions for working with the data and models.
+__utils/__ : directory contains utility scripts and functions for working with the data and models.
 
-__TO DO__ :
+__train.py__ : contain training and validation process
+
+__test.py__ : contain codes for testing the trained model from experiments
+
+### __TO DO__ :
 
 - Implement test.py
 - Implement resume from checkpoint
