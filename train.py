@@ -59,6 +59,15 @@ if __name__ == "__main__":
     if config["TRAIN"]["LOSS_FUNCTION"] == "cross_entropy":
         criterion = torch.nn.CrossEntropyLoss()
 
+    if config["FROM_CHECKPOINT"]:
+        assert isinstance(config["PTH_FILE"], str)
+        checkpoint = torch.load(config["FROM_CHECKPOINT"])
+        # load model state
+        model.load_state_dict(checkpoint["model_state_dict"])
+        # load optimizer state
+        optimizer.load_state_dict(checkpoint["optimizer_state_dict"])
+
+
     # Training loop
     epochs = config["TRAIN"]["EPOCHS"]
     for epoch in range(epochs):
@@ -77,9 +86,17 @@ if __name__ == "__main__":
             
         print(f'Loss: {loss.item():.4f}')
 
-        if (epoch+1) == 5:
-            torch.save(model.state_dict(), f'experiment/checkpoint_exp01_{epoch+1}.pth') # Save the model after every epoch
-            model.eval() # set model to evaluation mode
+        if (epoch+1) == 10:
+            # Save the model after every n epoch
+            state_dict = {           
+                'epoch': epoch,
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                'loss': loss,
+            }
+            torch.save(state_dict, f'experiment/checkpoint_exp01_{epoch+1}.pth') 
+            # set model to evaluation mode
+            model.eval() 
             # Define metrics
             test_loss = 0.0
             test_acc = 0.0
